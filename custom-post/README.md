@@ -1,7 +1,7 @@
 # Custom Post
 
-*   [Custom Post Loop](https://github.com/nicothin/web-development/tree/master/git#Общее)
-*   [Search](https://github.com/nicothin/web-development/tree/master/git#Консольные-команды)
+*   [Custom Post Loop](https://github.com/LoraRyssia/good-wordpress/tree/master/custom-post#Custom Post Loop)
+*   [Search](https://github.com/LoraRyssia/good-wordpress/tree/master/custom-post#Search)
 
 
 ## Custom Post Loop
