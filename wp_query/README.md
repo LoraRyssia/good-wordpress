@@ -62,10 +62,10 @@ This is the formal documentation of WP_Query. You shouldn’t alter the properti
 ### Properties
 
 `$query`
-Holds the query string that was passed to the $wp_query object by WP class.
+Holds the query string that was passed to the `$wp_query` object by WP class.
 
 `$query_vars`
-An associative array containing the dissected $query: an array of the query variables and their respective values.
+An associative array containing the dissected `$query`: an array of the query variables and their respective values.
 
 `$queried_object`
 Applicable if the request is a category, author, permalink or Page. Holds information on the requested category, author, post or Page.
@@ -76,28 +76,45 @@ If the request is a category, author, permalink or post / page, holds the corres
 `$posts`
 Gets filled with the requested posts from the database.
 
-$post_count
+`$post_count`
 The number of posts being displayed.
 
-$found_posts
+`$found_posts`
 The total number of posts found matching the current query parameters
 
-$max_num_pages
-The total number of pages. Is the result of $found_posts / $posts_per_page
+`$max_num_pages`
+The total number of pages. Is the result of `$found_posts / $posts_per_page`
 
-$current_post
+`$current_post`
 (available during The Loop) Index of the post currently being displayed.
-$post
+
+`$post`
 (available during The Loop) The post currently being displayed.
-$is_single, $is_page, $is_archive, $is_preview, $is_date, $is_year, $is_month, $is_time, $is_author, $is_category, $is_tag, $is_tax, $is_search, $is_feed, $is_comment_feed, $is_trackback, $is_home, $is_404, $is_comments_popup, $is_admin, $is_attachment, $is_singular, $is_robots, $is_posts_page, $is_paged
+
+`$is_single, $is_page, $is_archive, $is_preview, $is_date, $is_year, $is_month, $is_time, $is_author, $is_category, $is_tag, $is_tax, $is_search, $is_feed, $is_comment_feed, $is_trackback, $is_home, $is_404, $is_comments_popup, $is_admin, $is_attachment, $is_singular, $is_robots, $is_posts_page, $is_paged`
 Booleans dictating what type of request this is. For example, the first three represent ‘is it a permalink?’, ‘is it a Page?’, ‘is it any type of archive page?’, respectively.
 
+### Category Parameters
+
+`cat` (int) – use category id.
+`category_name` (string) – use category slug.
+`category__and` (array) – use category id.
+`category__in` (array) – use category id.
+`category__not_in` (array) – use category id.
+
+Display posts that have one category (and any children of that category), using category id:
 ``` bash
-<form class="search" action="<?php echo home_url( '/' ); ?>">
-    <input type="search" name="s" placeholder="Search&hellip;">
-    <input type="submit" value="Search">
-    <input type="hidden" name="post_type" value="custom-post-type">
-</form>
+$query = new WP_Query( array( 'cat' => 4 ) );
+```
+
+Display posts that have this category (and any children of that category), using category slug:
+``` bash
+$query = new WP_Query( array( 'category_name' => 'staff' ) );
+```
+
+Display posts that have this category (not children of that category), using category id:
+``` bash
+$query = new WP_Query( array( 'category__in' => 4 ) );
 ```
 
 
