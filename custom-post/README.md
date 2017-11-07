@@ -6,8 +6,8 @@
 
 ## Custom Post Loop
 
-WP Query
-Standard Loop
+### WP Query
+#### Standard Loop
 ``` bash
 <?php
  
@@ -29,7 +29,7 @@ if ( $the_query->have_posts() ) {
 wp_reset_postdata();
 ```
 
-Standard Loop (Alternate)
+#### Standard Loop (Alternate)
 
 ``` bash
 <?php 
@@ -54,4 +54,19 @@ $the_query = new WP_Query( $args ); ?>
     <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 ```
+
+## Search
+
+``` bash
+<form class="search" action="<?php echo home_url( '/' ); ?>">
+    <input type="search" name="s" placeholder="Search&hellip;">
+    <input type="submit" value="Search">
+    <input type="hidden" name="post_type" value="custom-post-type">
+</form>
+```
+
+
+
+
+
 
