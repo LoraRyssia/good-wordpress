@@ -1,6 +1,6 @@
 # Custom Post
 
-*   [Custom Post Loop](https://github.com/LoraRyssia/good-wordpress/tree/master/custom-post#Custom Post Loop)
+*   [Custom Post Loop](https://github.com/LoraRyssia/good-wordpress/tree/master/custom-post#Custom-Post-Loop)
 *   [Search](https://github.com/LoraRyssia/good-wordpress/tree/master/custom-post#Search)
 
 
